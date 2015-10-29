@@ -2,46 +2,150 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>sdny.co</title>
-  <meta name="description" content="">
+  <title>sdny.co - Product/UX Designer</title>
+  <meta name="description" content="Portfolio of Product Designer Sidney François">
   <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
 
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="four columns">&nbsp;</div>
-      <div class="four columns" style="margin-top: 25%; text-align: center;">
-        <h2>sdny.co</h2>
-        <p>Back in a spiffy.</p>
+  <header>
+    <h1>sdny.co</h1>
+  </header>
+
+  <div class="flex--center--wrapper">
+    <div class="flex--center--container">
+
+      <div class="message--container">
+        <h3 id="hello-message">Hello fellow human being.</h3>
+        <p class="message">Hi, I am <strong>Sidney</strong> from Berlin.
+          <span class="level level-1">As <strong>Head of Product</strong> I currently craft a space for extra-ordinary humans at <a href="https://www.veyo-care.com" target="_blank">Veyo Care</a>. Previously, I have consulted and built for companies like <strong>NOWADAYS</strong> and <strong>Uber</strong>.</span>
+          <span class="level level-2">I help people build better products/UX by sharing my insight via my <a href="#" id="show-newsletter">monthly (secret) newsletter</a>.</span>
+        </p>
+
+        <div class="slider--wrapper">
+          <label for="fader">What you know: </label><output for="fader" id="level">My name. But who doesn't.</output>
+          <input type="range" min="0" max="2" value="0" id="fader" step="1" oninput="outputUpdate(value)">
+        </div>
+
+        <span class="message--overlay">
+          <h3>Splendid idea! <span>🍸</span></h3>
+
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="//sdny.us12.list-manage.com/subscribe/post?u=bffd99b4b3727adeacea198a4&amp;id=435fd7324c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+          <label for="mce-MMERGE1">First Name </label>
+          <input type="text" value="" name="MMERGE1" class="" id="mce-MMERGE1">
+          </div>
+          <div class="mc-field-group">
+          <label for="mce-EMAIL">Email Address (no BS ever)</label>
+          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_bffd99b4b3727adeacea198a4_435fd7324c" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+        </span>
       </div>
-    </div>  
+
+    </div>
   </div>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <footer>
+
+    <ul class="social--links">
+      <li><a href="https://medium.com/@sdnyco" target="_blank">Medium</a> |</li>
+      <li><a href="https://twitter.com/@sdnyco" target="_blank">Twitter</a></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+    <script>
+
+      var firstLevelElements = document.getElementsByClassName("level-1"),
+          secondLevelElements = document.getElementsByClassName("level-2");
+
+      function outputUpdate(vol) {
+
+        var selectedLevel = "";
+
+        if (vol === "0") {
+
+          selectedLevel = "My name. But who doesn't.";
+
+          for(var i = 0; i < firstLevelElements.length; i++) {
+             firstLevelElements[i].className = "level level-1";
+          }
+
+          for(var i = 0; i < secondLevelElements.length; i++) {
+             secondLevelElements[i].className = "level level-2";
+          }
+        } else if (vol === "1") {
+
+          selectedLevel = "My mission. But there's one juicy secret left.";
+
+          for(var i = 0; i < firstLevelElements.length; i++) {
+             firstLevelElements[i].className = "level level-1 is-visible";
+          }
+
+          for(var i = 0; i < secondLevelElements.length; i++) {
+             secondLevelElements[i].className = "level level-2";
+          }
+        } else {
+
+          selectedLevel = "Everything. Will you be my best man?";
+
+          for(var i = 0; i < firstLevelElements.length; i++) {
+             firstLevelElements[i].className = "level level-1 is-visible";
+          }
+
+          for(var i = 0; i < secondLevelElements.length; i++) {
+             secondLevelElements[i].className = "level level-2 is-visible";
+          }
+        }
+
+        // show slider label
+      	document.querySelector('#level').value = selectedLevel;
+      }
+
+      // newsletter
+
+      document.querySelector('#show-newsletter').addEventListener("click", function() {
+
+        document.querySelector('.message--container').className = document.querySelector('.message--container').className + " show-newsletter";
+      });
+
+      // random hello
+      var randomHelloStrings = [
+        'Hello fellow human being. <span>👽</span>',
+        'Good to see you. <span>😊</span>',
+        'You made it. <span>👍</span>',
+        'Pleased to meet you. <span>👋</span>',
+        "It's my distinct pleasure. <span>🎩</span>"
+      ],
+        randomNumber = Math.floor(Math.random()*randomHelloStrings.length),
+        helloMessage = document.querySelector('#hello-message');
+
+      helloMessage.innerHTML = randomHelloStrings[randomNumber];
+    </script>
+
+  </footer>
+
 </body>
 </html>
